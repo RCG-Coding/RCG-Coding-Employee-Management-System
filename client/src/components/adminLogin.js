@@ -18,7 +18,7 @@ const Login = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log(values)
-        axios.post('http://localhost:2000/auth/login', values)
+        axios.post('http://localhost:2000/auth/adminLogin', values)
         .then(result => {
             if(result.data.loginStatus){
                 navigate('/dashboard');
@@ -36,7 +36,7 @@ const Login = () => {
             <div className='text-warning'>
                 {error}
             </div>
-            <h1>Log In</h1>
+            <h1>Admin Log In</h1>
             <form onSubmit={handleSubmit}>
                 <div >
                     <lable htmlfor='email'><strong>Email :</strong></lable>
@@ -55,7 +55,7 @@ const Login = () => {
                 </div>
             </form>
         </div>
-    </div>
+    </div>    
   )
 }
 

@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import {adminRouter} from './addmin.js';
+import { employeeRouter } from './employee.js';
 
 const app = express();
 const port = 2000;
@@ -13,9 +14,8 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/auth', adminRouter);
-
-
-
+app.use('/employee', employeeRouter);
+app.use(express.static('public'));
 
 app.listen(port,() =>{
     console.log(`The application Runing on port ${port}`)

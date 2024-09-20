@@ -7,7 +7,7 @@ import path from 'path';
 
 const router = express.Router();
 
-router.post('/login', (req, res) => {
+router.post('/adminLogin', (req, res) => {
 
     const sql = "SELECT * FROM addmin where email = ? and password = ?";
 
