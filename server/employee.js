@@ -26,9 +26,18 @@ router.post('/employeeLogin', (req, res) => {
                 }else{
                     return res.json({ loginStatus: false, Error: "Wrong Email or Password" });
                 }
-            })
+            });
         }
     });
 });
 
-export { router as employeeRouter };
+router.get('/details/:id', (req, res) => {
+    const id = req.params.id;
+    const sql = 'SELECT * FROM employee where id=?';
+    con.query(sql, [id], (err, result) => {
+        if(err) return res.json({Status:false, Error: 'Query Error'})
+        return res.json(result)
+    })
+})
+
+export { router as employeeRouter }

@@ -23,6 +23,7 @@ function App() {
         <Route path='/' element={<Start/>} />
           <Route path='/admin_login' element={<AdminLogin/>} />
           <Route path='/employee_login' element={<EmployeeLogin/>} />
+          <Route path='/employeeDetail/:id' element={<EmployeeDetails />}></Route>
           <Route path='/dashboard' element={<DashBoard/>}>
             <Route path='' element={<Home />}></Route>
             <Route path='employee' element={<Employee />}></Route>
@@ -32,7 +33,7 @@ function App() {
             <Route path='add_cat' element={<AddCat />}></Route>
             <Route path='add_emp' element={<AddEmp />}></Route>
             <Route path='edit_emp/:id' element={<EditEmp />}></Route>
-            <Route path='employeeDetail/:id' element={<EmployeeDetails />}></Route>
+            
           </Route>
         </Routes>
       </BrowserRouter>
